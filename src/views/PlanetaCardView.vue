@@ -1,14 +1,14 @@
 <script>
-    import PersonagemCard from '@/components/PersonagemCard.vue';
+    import PlanetaCard from '../components/PlanetaCard.vue';
 
     export default {
-        name: 'PersonagemListView',
+        name: 'PlanetaListView',
         components: {
-            PersonagemCard
+            PlanetaCard
         }, data() {
             return {
                 limit: 12,
-                personagens: [],
+                planetas: [],
                 total: 0,
                 currentPage: 1
             }
@@ -16,19 +16,19 @@
         watch: {
             currentPage(newCurrentPage){
                 this.currentPage = newCurrentPage
-                this.fetchPersonagem()
+                this.fetchPlaneta()
             }
         },
         mounted(){
-            this.fetchPersonagem()
+            this.fetchPlaneta()
         },
         methods: {
-            fetchPersonagem(){
-                const url = `https://dragonball-api.com/api/characters?page=${this.currentPage}&limit=${this.limit}`
+            fetchPlaneta(){
+                const url = `https://dragonball-api.com/api/planets?page=${this.currentPage}&limit=${this.limit}`
                 fetch(url).then(res => res.json()).then(data => {
-                    this.personagens = data.items
+                    this.planetas = data.items
                     this.total = data.meta.totalItems
-                    console.log(this.personagens)
+                    console.log(this.planeta)
                 })
             }
         }
@@ -48,7 +48,7 @@
             <img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="Ícone" />
             <span>Characters</span>
             </a>
-            <a href="planets">
+            <a href="/planets">
             <img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="Ícone" />
             <span>Planets</span>
             </a>
@@ -56,11 +56,11 @@
     </header>
 
     <div class="container d-flex flex-column align-items-center">
-        <h1 class="mb-3">Characters</h1>
+        <h1 class="mb-3">Planets</h1>
         <b-row class="justify-content-center w-100">
-            <b-col cols="12" md="4" lg="3" v-for="personagem in personagens" :key="personagem.name">
-                <PersonagemCard
-                :personagem = "personagem"/>
+            <b-col cols="12" md="4" lg="3" v-for="planeta in planetas" :key="planeta.name">
+                <PlanetaCard
+                :planeta = "planeta"/>
             </b-col>
             
         </b-row>
