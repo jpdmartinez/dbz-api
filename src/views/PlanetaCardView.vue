@@ -37,7 +37,7 @@
 
 <template>
     <header class="header">
-        <img src="/src/assets/pngwing.com (1).png" alt="Logo Dragon Ball Super" class="logo">
+        <a href="/"><img src="/src/assets/pngwing.com (1).png" alt="Logo Dragon Ball Super" class="logo"></a>
 
         <nav class="nav">
             <a href="/">
