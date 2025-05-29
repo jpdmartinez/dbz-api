@@ -1,3 +1,4 @@
+import HomeView from '@/views/HomeView.vue'
 import PersonagemCardView from '@/views/PersonagemCardView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -7,6 +8,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'Home',
+      component: HomeView
+    },
+    {
+      path: '/characters',
       name: 'PersonagensList',
       component: PersonagemCardView,
     },

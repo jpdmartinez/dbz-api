@@ -36,14 +36,25 @@
 </script>
 
 <template>
-    <header>
-        <img src="/src/assets/pngwing.com (1).png" alt="Logo Dragon Ball Super">
-        <nav>
-            <a href=""><img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="">Home</a>
-            <a href=""><img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="">Characters</a>
-            <a href=""><img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="">Planets</a>
+    <header class="header">
+        <img src="/src/assets/pngwing.com (1).png" alt="Logo Dragon Ball Super" class="logo">
+
+        <nav class="nav">
+            <a href="http://localhost:5173">
+            <img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="Ícone" />
+            <span>Home</span>
+            </a>
+            <a href="http://localhost:5173/characters">
+            <img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="Ícone" />
+            <span>Characters</span>
+            </a>
+            <a href="#">
+            <img src="../assets/[CITYPNG.COM]Dragon Ball Z DBZ Crystal Ball 2 Stars PNG - 2000x2000.png" alt="Ícone" />
+            <span>Planets</span>
+            </a>
         </nav>
     </header>
+
     <div class="container d-flex flex-column align-items-center">
         <h1 class="mb-3">Characters</h1>
         <b-row class="justify-content-center w-100">
@@ -67,31 +78,39 @@
         background-color: rgb(245, 245, 229) !important;
     }
 
-    header {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
+    .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7f7f7;
+}
 
-    header img{
-        height: 130px;
-    }
+.logo {
+  height: 80px;
+}
 
-    header nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.nav {
+  display: flex;
+  gap: 20px;
+}
 
-    header nav a{
-        text-decoration: none;
-        margin: 20px;
-        color: black;
-        font-size: 28px;
-        font-weight: bold;
-    }
+.nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
-    header nav a img{
-        height: 40px;
-    }
+.nav a img {
+  height: 30px;
+  margin-right: 8px;
+}
+
+.nav a:hover {
+  color: #e67e22;
+}
+
 </style>
