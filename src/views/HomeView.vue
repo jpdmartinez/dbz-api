@@ -22,6 +22,12 @@ import PersonagemCard from '@/components/PersonagemCard.vue'
                     this.personagens = data
                     console.log(this.personagens)
                 })
+            },
+            viewDetails(personagem){
+                console.log(personagem)
+                const id = personagem.id
+                console.log(id)
+                this.$router.push({name: 'PersonagemDetalhes', params: {id}})
             }
         }, 
     }
@@ -58,6 +64,7 @@ import PersonagemCard from '@/components/PersonagemCard.vue'
         <b-col cols="4" md="4" lg="3" v-for="personagem in personagens" :key="personagem.name">
             <PersonagemCard
             :personagem = "personagem"
+            @view-details="viewDetails"
             style="margin-top: 20px;
             width: 250px;"/>
         </b-col>
