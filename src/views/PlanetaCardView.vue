@@ -29,7 +29,13 @@
                     this.planetas = data.items
                     this.total = data.meta.totalItems
                     console.log(this.planeta)
-                })
+                });
+            },
+            viewDetails(planeta){
+                console.log(planeta)
+                const id = planeta.id
+                console.log(id)
+                this.$router.push({name: 'PlanetaDetalhes', params: {id}})
             }
         }
     }
@@ -60,7 +66,9 @@
         <b-row class="justify-content-center w-100">
             <b-col cols="12" md="4" lg="3" v-for="planeta in planetas" :key="planeta.name">
                 <PlanetaCard
-                :planeta = "planeta"/>
+                :planeta = "planeta"
+                @view-details="viewDetails"
+                />
             </b-col>
             
         </b-row>

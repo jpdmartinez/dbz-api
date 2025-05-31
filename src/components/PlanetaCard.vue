@@ -8,6 +8,9 @@
             getImageUrl(){
                 const id = this.planeta
                 return this.planeta.image
+            },
+            verDetalhes(){
+                this.$emit('view-details', this.planeta)
             }
         }
     }
@@ -20,7 +23,7 @@
             style="height: 130px;"
             class="mx-auto d-block mb-3"
             />
-            <b-button variant="primary">
+            <b-button variant="primary" @click="verDetalhes()">
                 Ver Detalhes
             </b-button>
     </b-card>

@@ -30,6 +30,12 @@
                     this.total = data.meta.totalItems
                     console.log(this.personagens)
                 })
+            },
+            viewDetails(personagem){
+                console.log(personagem)
+                const id = personagem.id
+                console.log(id)
+                this.$router.push({name: 'PersonagemDetalhes', params: {id}})
             }
         }
     }
@@ -60,9 +66,9 @@
         <b-row class="justify-content-center w-100">
             <b-col cols="12" md="4" lg="3" v-for="personagem in personagens" :key="personagem.name">
                 <PersonagemCard
-                :personagem = "personagem"/>
+                :personagem = "personagem"
+                @view-details = "viewDetails"/>
             </b-col>
-            
         </b-row>
         <b-pagination 
            v-model="currentPage"
