@@ -62,6 +62,7 @@
                 <p><strong>Transformações:</strong>
                     <b-row v-if="personagem.transformations.length != 0">
                         <b-col class="d-flex gap-2 justify-content-center mt-3">
+                            <b-button variant="warning" @click="mudarImagem(personagem)">Original</b-button>
                             <b-button class="" variant="warning" v-for="transformacao in personagem.transformations" @click="mudarImagem(transformacao)">{{ transformacao.name }}</b-button>
                         </b-col>
                     </b-row>
