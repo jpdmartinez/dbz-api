@@ -60,16 +60,30 @@ import PersonagemCard from '@/components/PersonagemCard.vue'
         </b-form>
 
     </b-container>
-    <b-row class="justify-content-center w-100">
-        <b-col cols="4" md="4" lg="3" v-for="personagem in personagens" :key="personagem.name">
-            <PersonagemCard
-            :personagem = "personagem"
-            @view-details="viewDetails"
-            style="margin-top: 20px;
-            width: 250px;"/>
-        </b-col>
-        
-    </b-row>
+
+    <div v-if="personagens.length > 1">
+        <b-row class="justify-content-center w-100">
+            <b-col cols="4" md="4" lg="3" v-for="personagem in personagens" :key="personagem.name">
+                <PersonagemCard
+                :personagem = "personagem"
+                @view-details="viewDetails"
+                style="margin-top: 20px;
+                width: 250px;"/>
+            </b-col>    
+        </b-row>
+    </div>
+    <div v-else>
+        <b-row class="justify-content-center w-100">
+            <b-col cols="4" md="4" lg="3" v-for="personagem in personagens" :key="personagem.name">
+                <PersonagemCard
+                :personagem = "personagem"
+                @view-details="viewDetails"
+                style="margin-top: 20px;
+                width: 250px;
+                transform: translateX(-30%);"/>
+            </b-col>    
+        </b-row>
+    </div>
 </template>
 
 <style>
